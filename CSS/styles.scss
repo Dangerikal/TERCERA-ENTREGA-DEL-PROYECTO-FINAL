@@ -1,0 +1,230 @@
+$colorbgfyh: #c61c30;
+$negro: #0f0e0e;
+$comun: center;
+
+%heading {
+    color: $colorbgfyh;
+    text-align: $comun;
+}
+   
+
+* {
+    box-sizing: border-box;
+}
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin breakpoint($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: #{map-get($breakpoints, $size)}) {
+            @content;
+        }
+    }
+}
+
+p{
+  @include breackpoint (xl){
+    font-size: 1.5rem;
+  }
+}
+
+
+body {
+    font-family: 'Ms Madi', cursive;
+    background-color: $negro;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    height: 100vh;
+    position: relative;
+    min-height: 100vh;
+    text-align: $comun;
+
+    .container{
+        width: 75%;
+        margin: 0 auto;
+        border-image: none;
+        max-width: 100px;
+    }
+        .titulo{
+            font-size: 2rem;
+            line-height: 1.3em;
+            margin-bottom: 1.8em;
+            border-style: none;
+        }
+            .menu{
+                letter-spacing: 15px;
+                font-size: 1.2em;
+            }
+                main{
+                    display: flex;
+                    justify-content: $comun;
+                    padding-bottom: .1em;
+                    padding-top: .1em;    
+                }
+                    p{
+                        margin-bottom: 0em;
+                        margin-top: 0em;
+                        text-align: $comun;
+                        margin-left: 7em;
+                        margin-right: 7em;
+                        color: #fff;
+                        font-size: 17px;
+                    }
+                        form{
+                            width: 450px;
+                            margin: auto;
+                            background: rgba (0,0,0,1);
+                            padding: 10px 20px;
+                            box-sizing: border-box;
+                            margin-top: 20px;
+                            border-radius: 7px;
+                        }
+                            h1{
+                                @extend %heading;
+                                margin: 10;
+                                font-size: 30px;
+                                margin-bottom: 60px;
+                                margin-top: 60px;
+                            }
+                                input, textarea{
+                                    width: 100%;
+                                    margin-bottom: 20px;
+                                    padding: 7px;
+                                    box-sizing: border-box;
+                                    font-size: 17px;
+                                    border: none;
+                                }
+                                
+                                    h2{
+                                        @extend %heading;
+                                        margin-top: 30px;
+                                        margin-bottom: 20px;
+                                    }
+                                    .banda{
+                                        display: flex;
+                                        justify-content: $comun;
+                                        padding-bottom: .1em;
+                                        padding-top: .1em; 
+                                     } 
+                                        .biografia{
+                                            @extend %heading
+                                            margin: 10;
+                                            font-size: 15px;
+                                            margin-bottom: 50px;
+                                            margin-top: 20px;
+                                        }
+                                            h1{
+                                                text-align: $comun;
+                                                margin-top: 30px;
+                                                margin-bottom: 20px;
+                                            }
+                                                input, textarea{
+                                                    width: 100%;
+                                                    margin-bottom: 20px;
+                                                    padding: 7px;
+                                                    box-sizing: border-box;
+                                                    font-size: 17px;
+                                                    border: none;
+                                                }
+                                                    h2{
+                                                        @extend %heading;
+                                                        margin-top: 30px;
+                                                        margin-bottom: 20px;
+                                                    }
+                                                        textarea{
+                                                            min-height: 100px;
+                                                            max-height: 200px;
+                                                            max-width: 100%;
+                                                        }
+                                                        #boton{
+                                                            background: $colorbgfyh;
+                                                            color: #fff;
+                                                            padding: 20px;
+                                                        }
+                                                            span{
+                                                                color: $negro;
+                                                                font-size: 17px;
+                                                            }
+    }
+
+.container2{
+    background-color: $colorbgfyh
+        li{
+            list-style-type: none;
+            margin-left: 1vw;
+        }
+            li:first-child{
+                margin: 0;
+            }
+                footer{
+                    padding-top: 5vh;
+                    padding-bottom: 2vh;
+                }
+                    .content{
+                        height: 7vh;
+                        width: 100%;
+                    }
+                        .copyright,  .impressum{
+                            text-align: center;
+                        }
+                            .logo{
+                                height: 8vh;
+                            }
+                                li{
+                                    margin-left: 0;
+                                    margin-bottom: 1vh;
+                                }
+                                    sozial{
+                                        margin-bottom: 1vh;
+                                    }
+}
+
+.slider{
+    width: 120%;
+    height: 600px;
+    overflow: hidden;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-block-end: 20px;
+
+    ul{
+        display: flex;
+        animation: cambio 20s infinite
+        alternate linear;
+        width: 400%;
+        height: 60%;
+    }
+
+    li{
+        width: 100%;
+        list-style: none;
+    }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+}
+
+@keyframes cambio{
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+
